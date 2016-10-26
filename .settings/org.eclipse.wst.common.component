@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="blog">
+    <wb-module deploy-name="blog-j2ee">
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="java-output-path" value="/blog/WebRoot/WEB-INF/classes"/>
-        <property name="context-root" value="blog"/>
+        <property name="java-output-path" value="/blog-j2ee/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="blog-j2ee"/>
     </wb-module>
 </project-modules>
