@@ -8,8 +8,11 @@
 <%@ page import="com.blog.model.ClassInfo" %>
 <%@ page import="com.blog.common.DataConverter" %>
 <%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	
 	Blog blog = new Blog();
-	int classId = DataValidator.toInt(request.getParameter("classid"));
+	int classId = DataConverter.toInt(request.getParameter("classid"));
 	List<BlogInfo> list = blog.getListByClassId(classId);
 	//获得博文分类
 	Class cls = new Class();
@@ -40,7 +43,7 @@
      	<h1 class="title"><a href="blog-information.jsp?id=<%=info.getId() %>"><%=info.getTitle() %></a></h1>
         <p class="byline"><small><%=info.getCreatedtime() %></small></p>
         <div class="entry">
-        	<p><%=Utility.subsstring(DataValidator.removeHtml(info.getContext()), 300) %></p>
+        	<p><%=Utility.substring(DataValidator.removeHtml(info.getContext()), 300) %></p>
         </div>
         <p class="meta"><a href="#" class="more">分类：<%=info.getClassName() %></a> &nbsp;&nbsp;&nbsp;<a href="#" class="more">详情</a> &nbsp;&nbsp;&nbsp;</p>
      </div>

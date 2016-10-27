@@ -2,6 +2,7 @@
 <%@ page import="com.blog.dal.Comment"%>
 <%@ page import="com.blog.model.CommentInfo"%>
 <%@ page import="com.blog.common.DataConverter"%>
+<%@ page import="com.blog.common.Utility" %>
 <%@ include file="islogin.jsp" %>
 <%
 	request.setCharacterEncoding("utf-8");
@@ -42,7 +43,7 @@
     		for(CommentInfo info:list) {	//遍历输出list集合中的 
     	 %>
     	 <tr>
-    	 	<td><%=Utility.Substring(DataValidator.removeHtml(info.getContext()),100) %></td>
+    	 	<td><%=Utility.substring(DataValidator.removeHtml(info.getContext()),100) %></td>
     	 	<td><%=info.getUsername() %></td>
     	 	<td><%=info.getCreatedtime() %></td>
     	 	<td>

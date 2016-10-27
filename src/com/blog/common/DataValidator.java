@@ -29,6 +29,15 @@ public class DataValidator {
 		return Pattern.compile(pattern).matcher(input).matches();
 	}
 	/**
+	 * Æ¥ÅäÓÊÏä
+	 * @param input
+	 * @return
+	 */
+	public static boolean isEmail(String input){
+		String pattern = "\\w+@\\w+(\\.\\w{2,3})*\\.\\w{2,3}";
+		return regexMatch(input, pattern);
+	}
+	/**
 	 * HTML±àÂë£¬Ö§³Ö»»ĞĞ·û
 	 * @param input-ĞèÒª±àÂëµÄ×Ö·û´®
 	 * @return ±àÂëºóµÄ×Ö·û´®
@@ -104,4 +113,6 @@ public class DataValidator {
 		Matcher m = p.matcher(input);
 		return m.replaceAll("");
 	}
+	
+	
 }

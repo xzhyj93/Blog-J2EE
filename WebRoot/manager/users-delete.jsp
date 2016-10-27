@@ -6,7 +6,7 @@
 <%
 	Users user = new Users();		//创建对象
 	int result = 0;
-	result = user.delete(DataConverter.toInt(request.getParameter("username")));
+	result = user.delete((request.getParameter("username")));
 	if(result == 1){
 		out.println("<script>alert('用户删除成功');window.location.href('users-manage.jsp');</script>");
 	} else {
@@ -17,8 +17,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
-    
+<%--     <base href="<%=basePath%>">
+ --%>    
     <title>My JSP 'users-delete.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">

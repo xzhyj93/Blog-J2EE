@@ -10,6 +10,9 @@
 <%@ page import="com.blog.model.CommentInfo" %>
 <%@ page import="com.blog.dal.Comment" %>
 <%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	
 	int id = DataConverter.toInt(request.getParameter("id"));
 	Blog blog = new Blog();
 	BlogInfo info = blog.getBlogInfo(id);
@@ -51,21 +54,9 @@
   	 		}
   	 	 %>
   	 	 <jsp:include page="comment.jsp">
-  	 	 <jsp:param value="<%=ud %>" name="id"/>
+  	 	 <jsp:param value="<%=id %>" name="id"/>
   	 	 </jsp:include>
   	 </div>
   	</article>
-   	<aside id="sidebar">
-   		<ul>
-   			<li>
-   				<h2>日志分类</h2>
-   				<ul>
-   				<%for(ClassInfo cinfo : clist) {%>
-   					<li><a href="blog-edit.jsp?classId=<%=cinfo.getId() %>"><%=cinfo.getName() %></a></li>
-   				<%} %>
-   				</ul>
-   			</li>
-   		</ul>
-   	</aside>
   </body>
 </html>

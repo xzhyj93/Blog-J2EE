@@ -24,6 +24,7 @@ public class Blog {
 		} else {
 			sql = sql + " where b.title like '%" + keyword + "%' order by id desc";
 		}
+		System.out.println(sql);
 		ResultSet rs = conn.executeQuery(sql);
 		while(rs.next()){
 			BlogInfo info = new BlogInfo();

@@ -4,14 +4,14 @@
 <%@ page import="com.blog.common.DataConverter" %>
 
 <%
-Class cls = new Class();		//创建对象
-int result = 0;
-result = blog.delete(DataConverter.toInt(request.getParameter("id")));
-if(result == 1){
-	out.println("<script>alert('分类删除成功');window.location.href('class-manage.jsp');</script>");
-} else {
-	out.println("<script>alert('分类删除失败');window.location.href('class-manage.jsp');</script>");
-}
+	Class cls = new Class();		//创建对象
+	int result = 0;
+	result = cls.delete(DataConverter.toInt(request.getParameter("id")));
+	if(result == 1){
+		out.println("<script>alert('分类删除成功');window.location.href('class-manage.jsp');</script>");
+	} else {
+		out.println("<script>alert('分类删除失败');window.location.href('class-manage.jsp');</script>");
+	}
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">

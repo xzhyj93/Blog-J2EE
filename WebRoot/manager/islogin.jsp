@@ -1,9 +1,16 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%@page import="com.blog.common.Utility" %>
+<%@page import="com.blog.common.DataValidator" %>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
+	String data = Utility.readCookie(request, "admin");
+	if(DataValidator.isNullOrEmpty(data)){
+		response.sendRedirect("login.jsp");
+	}
+ %>
 <!DOCTYPE HTML>
 <html>
   <head>
@@ -23,14 +30,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <%@page language="java" import="java.util.*" pageEncoding="utf-8" %>
-    <%@page import="com.blog.common.Utility" %>
-    <%@page import="com.blog.common.DataValidator" %>
-    <%
-    	String data = Utility.readCookie(request, "admin");
-    	if(DataValidator.isNullOrEmpty(data)){
-    		response.sendRedirect("login.jsp");
-    	}
-     %>
+    
   </body>
 </html>

@@ -1,14 +1,26 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%@page import="com.blog.dal.Users" %>
+<%@page import="com.blog.model.UsersInfo" %>
+<%@page import="com.blog.common.MD5" %>
+<%@page import="com.blog.common.DataValidator" %>
+<%@page import="com.blog.common.Utility" %>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	Users users = new Users();
+	String username = request.getParameter("AdminName");
+	String password = MD5.Encrypt(request.getParameter("Password"));
+	if(!users.isExist(username,password)){
+		out.println("<script>alert('用户名密码有误');window.location.href('login.jsp');</script>");
+	} else {
+		Utility.writeCookie(response, "admin", username);
+		response.sendRedirect("index.html");
+	}
 %>
-
 <!DOCTYPE HTML>
 <html>
   <head>
-    <base href="<%=basePath%>">
-    
+<%--     <base href="<%=basePath%>">
+ --%>    
     <title>My JSP 'login-check.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
@@ -23,23 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	<%@page language="java" import="java.util.*" pageEncoding="utf-8" %>
-  	<%@page import="com.blog.dal.Users" %>
-  	<%@page import="com.blog.model.UsersInfo" %>
-  	<%@page import="com.blog.common.MD5" %>
-  	<%@page import="com.blog.common.DataValidator" %>
-  	<%@page import="com.blog.common.Utility" %>
-  	<%
-  		Users users = new Users();
-  		String username = request.getParameter("AdminName");
-  		String password = MD5.Encrypt(request.getParameter("Password"));
-  		if(!users.isExist(username,password)){
-  			out.println("<script>alert('用户名密码有误');window.location.href('login.jsp');</script>");
-  		} else {
-  			Utility.writeCookie(response, "admin", username);
-  			response.sendRedirect("index.html");
-  		}
-  	%>
+  	
     This is my JSP page. <br>
   </body>
 </html>

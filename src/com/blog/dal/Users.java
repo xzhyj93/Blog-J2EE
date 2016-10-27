@@ -54,6 +54,7 @@ public class Users {
 			result = true;
 		}
 		conn.close();
+		System.out.println("user "+username + " is " + (result?"not ":"") + "exist");
 		return result;
 	}
 	
@@ -94,6 +95,7 @@ public class Users {
 			info.setPower(rs.getString("Power"));
 			result = true;
 		}
+		System.out.println("user "+username + " is " + (result?"":"not ") + "exist");
 		conn.close();
 		return result;
 	}
@@ -109,6 +111,7 @@ public class Users {
 		int result = 0;
 		System.out.print(sql);
 		result = conn.executeUpdate(sql);
+		System.out.println("excute sql: " + sql + " and the result is "+result);
 		conn.close();
 		return result;
 	}

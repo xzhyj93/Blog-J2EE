@@ -108,7 +108,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    			</tr>
    			<tr>
    				<td>博文内容</td>
-   				<td><%=ckEditor %></td>
+   				<td><textarea name="editor01"></textarea></td>
    			</tr>
    			<tr>
    				<td colspan="2">

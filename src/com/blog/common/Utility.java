@@ -20,7 +20,7 @@ public class Utility {
 	 * @param len
 	 * @return 
 	 */
-	public static String subsstring(String input, int len){
+	public static String substring(String input, int len){
 		if(DataValidator.isNullOrEmpty(input))
 			return "";
 		if(len>=input.length())

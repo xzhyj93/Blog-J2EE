@@ -10,17 +10,18 @@
  	String action = request.getParameter("action");
  	String pageAction="";
  	String username=request.getParameter("username");
- 	UserInfo info = new UserInfo();
+ 	UsersInfo info = new UsersInfo();
  	Users user  = new Users();
  	//保存
  	if("update".equals(action)){
- 		info.user.getUsersInfo(username);
+ 		user.getUsersInfo(username);
 		if(info==null){
 			out.println("<script>alert('用户ID有误');window.location.href('users-manage.jsp');</script>");
 		}
  		info.setUsername(username);
  		info.setPassword(request.getParameter("txtPassword"));
  		String email = "";
+ 		
  		if(DataValidator.isEmail(request.getParameter("txtEmail"))){
  			email=request.getParameter("txtEmail");
  		} else {
@@ -54,8 +55,8 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <base href="<%=basePath%>">
-    
+<%--     <base href="<%=basePath%>">
+ --%>    
     <title>My JSP 'blog-edit.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">

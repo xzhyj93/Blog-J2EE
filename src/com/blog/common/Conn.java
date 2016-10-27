@@ -17,6 +17,8 @@ public class Conn {
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
+	String username = "root";
+	String password = "123456";
 	/**
 	 * 加载驱动程序
 	 */
@@ -33,7 +35,7 @@ public class Conn {
 	public ResultSet executeQuery(String sql){
 		try{
 			//创建连接
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/blogdb?userUnicode=true&characterEncoding=UTF-8","root",null);
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/blogdb?userUnicode=true&characterEncoding=UTF-8",username,password);
 			//创建SQL语句对象
 			stmt = conn.createStatement();
 			//提交SQL语句
@@ -49,10 +51,11 @@ public class Conn {
 	public int executeUpdate(String sql){
 		int result = 0;
 		try{
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/blogdb?userUnicode=true&characterEncoding=UTF-8","root",null);
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/blogdb?userUnicode=true&characterEncoding=UTF-8",username,password);
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			result = stmt.executeUpdate(sql);
 		} catch (SQLException ex){
+			System.err.println(ex);
 			result = 0;
 		}
 		return result;

@@ -1,8 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ page import="com.blog.common.Utility" %>
 <%@ page import="com.blog.common.DataValidator" %>
-<%@ page import="com.sun.corba.se.spi.orbutil.fsm.Action" %>
-<%@ page import="com.blog.dal.Users" %>
+<%-- <%@ page import="com.sun.corba.se.spi.orbutil.fsm.Action" %>
+ --%><%@ page import="com.blog.dal.Users" %>
 <%@ page import="com.blog.common.MD5" %>
 <%@ page import="com.blog.common.DataConverter" %>
 <%@ page import="com.blog.dal.Comment" %>
@@ -63,7 +63,7 @@
   	</table>
   </form>
   <%} else { %>
-  欢迎您：<%Utility.readCookie(request, "user") %><a href="login.jsp">退出</a>
+  欢迎您：<%=Utility.readCookie(request, "user") %><a href="login.jsp">退出</a>
   <form name="commentForm" method="post" action="comment.jsp?aciton=save">
   	<input name="id" type="hidden" id="id" value="<%=request.getParameter("id") %>"/>
   	<textarea rows="4" cols="50" name="txtContext"></textarea>

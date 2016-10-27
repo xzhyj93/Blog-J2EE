@@ -10,6 +10,7 @@
 <%@ page import="com.blog.model.ClassInfo" %>
 
 <%
+	System.out.println(request.getParameter("txtUserName"));
 	request.setCharacterEncoding("utf-8");
 	String action = request.getParameter("action");
 	UsersInfo info = new UsersInfo();
@@ -23,7 +24,7 @@
 			info.setEmail(request.getParameter("txtEmail"));
 			info.setPower("user");
 			user.insert(info);
-			out.println("<script>alert('注册成功');window.location.href('index.jsp');</script>");
+			out.println("<script>alert('注册成功');window.location.href='index.jsp';</script>");
 		}
 	}
  %>
@@ -31,7 +32,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>My JSP 'register.jsp' starting page</title>
+    <title>新用户注册</title>
 
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">

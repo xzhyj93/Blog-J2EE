@@ -77,7 +77,7 @@ public class Class {
 	 * @param id
 	 * @return
 	 */
-	public int delelte(int id){
+	public int delete(int id){
 		String sql = "delete from Class where id="+id+"";
 		int result = 0;
 		result = conn.executeUpdate(sql);
