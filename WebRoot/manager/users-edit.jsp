@@ -1,5 +1,5 @@
 <%@page language="java" import="java.util.*" pageEncoding="utf-8" %>
-<%@include file="islogin.jsp" %>
+<%@include file="manager-islogin.jsp" %>
 <%@page import="com.blog.common.DataConverter" %>
 <%@page import="com.blog.model.UsersInfo" %>
 <%@page import="com.blog.dal.Users" %>
@@ -16,7 +16,7 @@
  	if("update".equals(action)){
  		user.getUsersInfo(username);
 		if(info==null){
-			out.println("<script>alert('用户ID有误');window.location.href('users-manage.jsp');</script>");
+			out.println("<script>alert('用户ID有误');window.location.href='users-manage.jsp';</script>");
 		}
  		info.setUsername(username);
  		info.setPassword(request.getParameter("txtPassword"));
@@ -74,7 +74,7 @@
   <body>
    	<p>当前位置：用户编辑/添加</p>
    	<form id="form1" name="form1" method="post" action="users-edit.jsp">
-   		<table width="100%" border="1">
+   		<table style="width:100%; border:1px">
    			<tr>
    				<td>用户名</td>
    				<td>

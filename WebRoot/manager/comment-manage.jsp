@@ -3,7 +3,7 @@
 <%@ page import="com.blog.model.CommentInfo"%>
 <%@ page import="com.blog.common.DataConverter"%>
 <%@ page import="com.blog.common.Utility" %>
-<%@ include file="islogin.jsp" %>
+<%@ include file="manager-islogin.jsp" %>
 <%
 	request.setCharacterEncoding("utf-8");
 	Comment comment=new Comment();

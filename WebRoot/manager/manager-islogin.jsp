@@ -9,7 +9,7 @@
 
 	String data = Utility.readCookie(request, "admin");
 	if(DataValidator.isNullOrEmpty(data)){
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("manager-login.jsp");
 	}
  %>
 <!DOCTYPE HTML>

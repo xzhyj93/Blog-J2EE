@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="com.blog.dal.Class"%>
 <%@ page import="com.blog.model.ClassInfo"%>
-<%@ include file="islogin.jsp" %>
+<%@ include file="manager-islogin.jsp" %>
 <%
 	request.setCharacterEncoding("utf-8");
 	Class cls = new Class();

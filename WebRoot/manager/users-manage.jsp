@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="com.blog.dal.Users"%>
 <%@ page import="com.blog.model.UsersInfo"%>
-<%@ include file="islogin.jsp" %>
+<%@ include file="manager-islogin.jsp" %>
 <%
 	request.setCharacterEncoding("utf-8");
 	Users user = new Users();
@@ -31,7 +31,7 @@
 	<p>
 		当前位置：用户管理
 	</p>
-	<table width="98%" border="1">
+	<table style="width:98%; border:1px">
   		<tr>
   			<td>用户名</td>
   			<td>Email</td>

@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@include file="islogin.jsp" %>
+<%@include file="manager-islogin.jsp" %>
 <%@ page import="com.blog.dal.Comment"%>
 <%@ page import="com.blog.common.DataConverter"%>
 <%

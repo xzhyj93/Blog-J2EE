@@ -76,7 +76,7 @@
     				</td>
     			</tr>
     			<tr>
-	  				<td></td><td colspan="2" class="fl-right"><a href="manager/login.jsp" ><small style="line-height:2em; color:#555">已有账号，直接登录→</small></a></td>
+	  				<td></td><td colspan="2" class="fl-right"><a href="login.jsp" ><small style="line-height:2em; color:#555">已有账号，直接登录→</small></a></td>
 	  			</tr>
     		</table>
     	</form>
