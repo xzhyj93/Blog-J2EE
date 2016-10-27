@@ -64,7 +64,7 @@
   	<nav class="nav clear-fix">
   		<ul class="fl-right">
   			<li><a href="register.jsp">注册</a></li>
-  			<li><a href="login.jsp">登录</a></li>
+  			<li><a href="manager/login.jsp">登录</a></li>
   		</ul>
   	</nav>
   	<article id="context">

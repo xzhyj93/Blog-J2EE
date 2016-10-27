@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>博客管理系统后台</title>
-	
+	<meta charset="utf-8">
     <!-- <meta name="keywords" content="keyword1,keyword2,keyword3"> -->
     <!-- <meta name="description" content="this is my page"> -->
     <meta name="Content-Type" content="text/html; charset=UTF-8">
@@ -10,11 +10,11 @@
     <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
 
   </head>
-  <frameset rows="*" cols="*,900" framespacing="0" frameborder="no" border="0">
-  	<frame src="menu.jsp" name="leftFrame" id="leftFrame" title="mainFrame"/>
-  	<!-- right.jsp位一个空白页 -->
-  	<frame src="right.jsp" name="rightFrame" scrolling="no" noresize="noresize" id="rightFrame" title="rightFrame"/>
-  </frameset> 
+  	
   <body>
+  	<!-- #include file="menu.jsp" -->
+  	<iframe src="menu.jsp" name="leftFrame" id="leftFrame" scrolling="false" title="mainFrame"></iframe>
+  	<!-- right.jsp位一个空白页 -->
+  	<iframe src="right.jsp" name="rightFrame" id="rightFrame" title="rightFrame"></iframe>
   </body>
 </html>

@@ -1,4 +1,3 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@page language="java" import="java.util.*" pageEncoding="utf-8" %>
 <%@page import="com.blog.dal.Users" %>
 <%@page import="com.blog.model.UsersInfo" %>
@@ -10,7 +9,7 @@
 	String username = request.getParameter("AdminName");
 	String password = MD5.Encrypt(request.getParameter("Password"));
 	if(!users.isExist(username,password)){
-		out.println("<script>alert('用户名密码有误');window.location.href('login.jsp');</script>");
+		out.println("<script>alert('用户名密码有误');window.location.href='login.jsp';</script>");
 	} else {
 		Utility.writeCookie(response, "admin", username);
 		response.sendRedirect("index.html");

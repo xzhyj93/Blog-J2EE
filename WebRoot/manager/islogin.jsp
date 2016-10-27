@@ -1,3 +1,4 @@
+<!-- 验证后台管理员是否登录blog系统页面 -->
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@page language="java" import="java.util.*" pageEncoding="utf-8" %>
 <%@page import="com.blog.common.Utility" %>

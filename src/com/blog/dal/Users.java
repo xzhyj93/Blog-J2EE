@@ -43,9 +43,10 @@ public class Users {
 	public boolean isExist(String username,String password) throws SQLException{
 		boolean result = false;
 		UsersInfo info = new UsersInfo();
-		String sql = "select * from Users u where Usersname='" + username + "' and Password='" + password +"'";
+		String sql = "select * from users u where UserName='" + username + "' and Password='" + password +"'";
 		System.out.println(sql);
 		ResultSet rs = conn.executeQuery(sql);
+		System.out.println(sql);
 		if(rs.next()){
 			info.setUsername(rs.getString("UserName"));
 			info.setPassword(rs.getString("Password"));
