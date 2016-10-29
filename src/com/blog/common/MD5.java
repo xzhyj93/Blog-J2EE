@@ -11,6 +11,7 @@ public class MD5 {
 	 * @return 
 	 */
 	public synchronized static final String Encrypt(String data){
+		System.out.println(Encrypt(data,16));
 		return Encrypt(data, 16);
 	}
 	/**

@@ -21,6 +21,9 @@
 		} else {
 			info.setUsername(request.getParameter("txtUserName"));
 			info.setPassword(MD5.Encrypt(request.getParameter("txtPassword")));
+			System.out.println("超人:"+MD5.Encrypt("hao"));
+			System.out.println("蜘蛛侠:"+MD5.Encrypt(request.getParameter("txtPassword")));
+			System.out.println("蝙蝠侠:"+info.getPassword());
 			info.setEmail(request.getParameter("txtEmail"));
 			info.setPower("user");
 			user.insert(info);

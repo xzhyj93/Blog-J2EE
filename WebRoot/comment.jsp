@@ -1,8 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ page import="com.blog.common.Utility" %>
 <%@ page import="com.blog.common.DataValidator" %>
-<%-- <%@ page import="com.sun.corba.se.spi.orbutil.fsm.Action" %>
- --%><%@ page import="com.blog.dal.Users" %>
+<%-- <%@ page import="com.sun.corba.se.spi.orbutil.fsm.Action" %> --%>
+ <%@ page import="com.blog.dal.Users" %>
 <%@ page import="com.blog.common.MD5" %>
 <%@ page import="com.blog.common.DataConverter" %>
 <%@ page import="com.blog.dal.Comment" %>
@@ -35,11 +35,8 @@
   <head>
     <title>My JSP 'comment.jsp' starting page</title>
 
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
+	<meta name="keywords" content="评论,博文">
+	<meta name="description" content="This is a page to show comments">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -52,9 +49,9 @@
  	if(DataValidator.isNullOrEmpty(data)){
   %>
   <form id="form1" name="form1" method="post" action="comment.jsp?action=login">
-  	<table width="400" border="0">
+  	<table style="width:400px; border:none">
   		<tr>
-  			<td>用户名</td><input name="id" type="hidden" id="id" value="<%=request.getParameter("id") %>"/>
+  			<td>用户名</td><td><input name="id" type="hidden" id="id" value="<%=request.getParameter("id") %>"/></td>
   			<td><input name="txtUserName" type="text" id="txtUserName" size="12"/></td>
   			<td>密码</td>
   			<td><input name="txtPassword" type="password" id="txtPassword" size="12"/></td>

@@ -17,24 +17,17 @@
 %>
 <!DOCTYPE HTML>
 <html>
-  <head>
-<%--     <base href="<%=basePath%>">
- --%>    
-    <title>My JSP 'login-check.jsp' starting page</title>
+  <head> 
+    <title>登陆检测</title>
     
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<meta name="pragma" content="no-cache">
+	<meta name="cache-control" content="no-cache">
+	<meta name="expires" content="0">    
+	<meta name="keywords" content="登陆,J2EE,检查登陆">
+	<meta name="description" content="This is page to check user login message...">
 
   </head>
   
   <body>
-  	
-    This is my JSP page. <br>
   </body>
 </html>

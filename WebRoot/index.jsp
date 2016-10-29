@@ -6,6 +6,7 @@
 <%@ page import="com.blog.common.Utility" %>
 <%@ page import="com.blog.dal.Class" %>
 <%@ page import="com.blog.model.ClassInfo" %>
+<%@ page import="com.blog.common.MD5" %>
 <%
 /* 	JSP中的内建对象有：request, response, pageContext, session, application, out, config, page, exception等
 	request对象封装了用户提交给服务器的所有信息，通过request对象可以获取用户提交的信息；
@@ -32,7 +33,8 @@
 
 	Blog blog = new Blog();
 	List<BlogInfo> list = blog.getList(null);
-	
+	System.out.println(MD5.Encrypt("hao",16));
+	System.out.println(MD5.Encrypt("123",16));
 	//获取博文分类
 	Class cls = new Class();
 	List<ClassInfo> clist = cls.getList();
@@ -52,11 +54,8 @@
 		 content 属性提供了名称/值对中的值。该值可以是任何有效的字符串。
 		 content 属性始终要和 name 属性或 http-equiv 属性一起使用。
 	 -->
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="J2EE,Blog System">
-	<meta http-equiv="description" content="This a index page into Blog System">
+	<meta name="keywords" content="J2EE,Blog System">
+	<meta name="description" content="This an index page into Blog System">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   
@@ -67,8 +66,24 @@
   			<li><a href="login.jsp">登录</a></li>
   		</ul>
   	</nav>
-  	<article id="context">
+  	<aside id="sidebar" style="width:200px; float:left">
+   		<ul>
+   			<li>
+   				<h2>日志分类</h2>
+   				<ul>
+   				<%for(ClassInfo cinfo : clist) {%>
+   					<li><a href="blog-edit.jsp?classId=<%=cinfo.getId() %>"><%=cinfo.getName() %></a></li>
+   				<%} %>
+   				</ul>
+   			</li>
+   		</ul>
+   	</aside>
+  	<article id="context" style="margin-left:25%">
   	<%
+  		if(list.size() == 0){
+  	%>
+  	<p>暂时没有博文信息</p>
+  	<% } else
   		for(BlogInfo info : list) {//遍历输出list集合中的数据
   	 %>
   	 <div class="post">
@@ -83,17 +98,6 @@
   	 	}
   	  %>
   	</article>
-   	<aside id="sidebar">
-   		<ul>
-   			<li>
-   				<h2>日志分类</h2>
-   				<ul>
-   				<%for(ClassInfo cinfo : clist) {%>
-   					<li><a href="blog-edit.jsp?classId=<%=cinfo.getId() %>"><%=cinfo.getName() %></a></li>
-   				<%} %>
-   				</ul>
-   			</li>
-   		</ul>
-   	</aside>
+   	
   </body>
 </html>
